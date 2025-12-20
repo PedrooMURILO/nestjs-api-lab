@@ -10,4 +10,9 @@ export class AppController {
   getHello(): string {
     return 'Retorno do GET';
   }
+
+  @Get('exemplo')
+  exemplo() {
+    return 'Exemplo de rota';
+  }
 }
