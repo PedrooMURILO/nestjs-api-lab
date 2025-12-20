@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-// import { AppService } from './app.service';
+import { AppService } from './app.service';
 
 @Controller('home') // /home
 export class AppController {
-  // constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) {}
 
   // /hello
   @Get('hello') // Método de Solicitação -> Ler (Read) -> cRud
@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @Get('exemplo')
-  exemplo() {
-    return 'Exemplo de rota';
+  exemplo(): string {
+    return this.appService.solucionaExemplo();
   }
 }
