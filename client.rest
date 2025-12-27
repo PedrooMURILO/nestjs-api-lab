@@ -4,7 +4,7 @@
 # @name AppControllerGetHello
 GET {{baseUrl}}/home/hello
 
-# MESSAGES
+# Messages
 ### MessagesControllerGetHello
 # @name MessagesControllerFindAll
 GET {{baseUrl}}/messages
@@ -12,3 +12,7 @@ GET {{baseUrl}}/messages
 ### MessagesControllerGetHello
 # @name MessagesControllerFindOne
 GET {{baseUrl}}/messages/6345
+
+### MessagesControllerGetHello
+# @name MessagesControllerFindOneAndName
+GET {{baseUrl}}/messages/Pedro/6345

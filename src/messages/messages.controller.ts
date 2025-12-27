@@ -11,4 +11,9 @@ export class MessagesController {
   findOne(@Param('id') id: string) {
     return `This action returns a #${id} message`;
   }
+
+  @Get(':name/:id')
+  findOneAndName(@Param('id') id: string, @Param('name') name: string) {
+    return `This action returns a #${id} message from ${name}`;
+  }
 }
