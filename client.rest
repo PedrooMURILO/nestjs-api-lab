@@ -4,14 +4,11 @@
 # @name AppControllerGetHello
 GET {{baseUrl}}/home/hello
 
-### ExemploDeRota
-# @name ExemploDeRota
-GET {{baseUrl}}/home/exemplo
+# MESSAGES
+### MessagesControllerGetHello
+# @name MessagesControllerFindAll
+GET {{baseUrl}}/messages
 
-### ConceptsManualController Home
-# @name ConceptsManualControllerHome
-GET {{baseUrl}}/concepts-manual/
-
-### ConceptsAutomaticController Home
-# @name ConceptsAutomaticControllerHome
-GET {{baseUrl}}/concepts-automatic/
+### MessagesControllerGetHello
+# @name MessagesControllerFindOne
+GET {{baseUrl}}/messages/6345
