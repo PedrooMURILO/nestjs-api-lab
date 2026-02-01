@@ -32,3 +32,12 @@ Content-Type: application/json
     "message": "This is the message I am sending.",
     "otherKey": "Other value."
 }
+###
+# @name MessagesControllerDelete
+DELETE {{baseUrl}}/messages/10
+Content-Type: application/json 
+
+{
+    "message": "This is the message I am sending.",
+    "otherKey": "Other value."
+}
