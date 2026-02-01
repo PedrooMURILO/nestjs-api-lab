@@ -23,3 +23,12 @@ Content-Type: application/json
     "message": "This is the message I am sending.",
     "otherKey": "Other value."
 }
+###
+# @name MessagesControllerPatch
+PATCH {{baseUrl}}/messages/10
+Content-Type: application/json 
+
+{
+    "message": "This is the message I am sending.",
+    "otherKey": "Other value."
+}
