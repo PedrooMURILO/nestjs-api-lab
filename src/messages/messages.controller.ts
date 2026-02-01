@@ -8,14 +8,16 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 
 @Controller('messages')
 export class MessagesController {
   @HttpCode(HttpStatus.OK)
   @Get() // /messages/
-  findAll() {
-    return 'This route returns all messages.';
+  findAll(@Query() pagination: any) {
+    const { limit = 10, offset = 0 } = pagination;
+    return `This route returns all messages. Limit = ${limit}, Offfset = ${offset}`;
   }
 
   @Get(':id')

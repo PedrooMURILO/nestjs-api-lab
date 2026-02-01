@@ -15,6 +15,9 @@ GET {{baseUrl}}/messages/6345
 # @name MessagesControllerFindOneAndName
 GET {{baseUrl}}/messages/Pedro/6345
 ###
+# @name MessagesControllerQueryParameters
+GET {{baseUrl}}/messages/?limit=100&offset=50&user=pedro
+###
 # @name MessagesControllerPost
 POST {{baseUrl}}/messages
 Content-Type: application/json 
