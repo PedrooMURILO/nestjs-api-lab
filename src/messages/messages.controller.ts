@@ -10,14 +10,18 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
+import { MessagesService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
+  constructor(private readonly messagesService: MessagesService) {}
+
   @HttpCode(HttpStatus.OK)
   @Get() // /messages/
   findAll(@Query() pagination: any) {
     const { limit = 10, offset = 0 } = pagination;
-    return `This route returns all messages. Limit = ${limit}, Offfset = ${offset}`;
+    // return `This route returns all messages. Limit = ${limit}, Offfset = ${offset}`;
+    return this.messagesService.getHello();
   }
 
   @Get(':id')
