@@ -8,7 +8,6 @@ import {
   Param,
   Patch,
   Post,
-  Query,
 } from '@nestjs/common';
 import { MessagesService } from './messages.service';
 
@@ -18,37 +17,27 @@ export class MessagesController {
 
   @HttpCode(HttpStatus.OK)
   @Get() // /messages/
-  findAll(@Query() pagination: any) {
-    const { limit = 10, offset = 0 } = pagination;
-    // return `This route returns all messages. Limit = ${limit}, Offfset = ${offset}`;
-    return this.messagesService.getHello();
+  findAll() {
+    return this.messagesService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return `This action returns a #${id} message`;
-  }
-
-  @Get(':name/:id')
-  findOneAndName(@Param('id') id: string, @Param('name') name: string) {
-    return `This action returns a #${id} message from ${name}`;
+  findById(@Param('id') id: string) {
+    return this.messagesService.findById(id);
   }
 
   @Post()
   create(@Body() body: any) {
-    return body;
+    return this.messagesService.create(body);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() body: any) {
-    return {
-      id,
-      ...body,
-    };
+    this.messagesService.update(id, body);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return `This action deletes the message with id #${id}`;
+    this.messagesService.remove(id);
   }
 }

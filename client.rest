@@ -10,10 +10,10 @@ GET {{baseUrl}}/home/hello
 GET {{baseUrl}}/messages
 ###
 # @name MessagesControllerFindOne
-GET {{baseUrl}}/messages/6345
+GET {{baseUrl}}/messages/2
 ###
 # @name MessagesControllerFindOneAndName
-GET {{baseUrl}}/messages/Pedro/6345
+GET {{baseUrl}}/messages/1/Pedro
 ###
 # @name MessagesControllerQueryParameters
 GET {{baseUrl}}/messages/?limit=100&offset=50&user=pedro
@@ -23,24 +23,24 @@ POST {{baseUrl}}/messages
 Content-Type: application/json 
 
 {
-    "message": "This is the message I am sending.",
-    "otherKey": "Other value."
+    "text": "New message",
+    "from": "Pedro",
+    "for": "Gladisson",
+    "read": false,
+    "date": "2026-02-04T13:30:29.696Z"
 }
 ###
 # @name MessagesControllerPatch
-PATCH {{baseUrl}}/messages/10
+PATCH {{baseUrl}}/messages/2
 Content-Type: application/json 
 
 {
-    "message": "This is the message I am sending.",
-    "otherKey": "Other value."
+    "text": "Update message",
+    "from": "Pedro",
+    "for": "Luiz",
+    "read": false,
+    "date": "2026-02-04T13:30:29.696Z"
 }
 ###
 # @name MessagesControllerDelete
-DELETE {{baseUrl}}/messages/10
-Content-Type: application/json 
-
-{
-    "message": "This is the message I am sending.",
-    "otherKey": "Other value."
-}
+DELETE {{baseUrl}}/messages/3
