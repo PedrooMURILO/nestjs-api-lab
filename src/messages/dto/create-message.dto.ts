@@ -1,5 +1,18 @@
+import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+
 export class CreateMessageDto {
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(255)
   readonly text: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(50)
   readonly from: string;
-  readonly for: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(50)
+  readonly to: string;
 }

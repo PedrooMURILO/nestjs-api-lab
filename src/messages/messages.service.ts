@@ -11,7 +11,7 @@ export class MessagesService {
       id: 1,
       text: 'This is a test',
       from: 'Pedro',
-      for: 'Luiz',
+      to: 'Luiz',
       read: false,
       date: new Date(),
     },
