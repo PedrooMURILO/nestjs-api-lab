@@ -19,9 +19,7 @@ Content-Type: application/json
 {
     "text": "New message",
     "from": "Pedro",
-    "for": "Gladisson",
-    "read": false,
-    "date": "2026-02-04T13:30:29.696Z"
+    "for": "Gladisson"
 }
 ###
 # @name MessagesControllerPatch
@@ -30,10 +28,7 @@ Content-Type: application/json
 
 {
     "text": "Update message",
-    "from": "Pedro",
-    "for": "Luiz",
-    "read": false,
-    "date": "2026-02-04T13:30:29.696Z"
+    "from": "Pedro"
 }
 ###
 # @name MessagesControllerDelete
