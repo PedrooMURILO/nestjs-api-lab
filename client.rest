@@ -12,12 +12,6 @@ GET {{baseUrl}}/messages
 # @name MessagesControllerFindOne
 GET {{baseUrl}}/messages/2
 ###
-# @name MessagesControllerFindOneAndName
-GET {{baseUrl}}/messages/1/Pedro
-###
-# @name MessagesControllerQueryParameters
-GET {{baseUrl}}/messages/?limit=100&offset=50&user=pedro
-###
 # @name MessagesControllerPost
 POST {{baseUrl}}/messages
 Content-Type: application/json 
@@ -43,4 +37,4 @@ Content-Type: application/json
 }
 ###
 # @name MessagesControllerDelete
-DELETE {{baseUrl}}/messages/3
+DELETE {{baseUrl}}/messages/2
