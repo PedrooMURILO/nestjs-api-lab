@@ -19,7 +19,7 @@ Content-Type: application/json
 {
     "text": "New message",
     "from": "Pedro",
-    "for": "Gladisson"
+    "to": "Gladisson"
 }
 ###
 # @name MessagesControllerPatch
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 {
     "text": "Update message",
-    "from": "Pedro"
+    "read": true
 }
 ###
 # @name MessagesControllerDelete
