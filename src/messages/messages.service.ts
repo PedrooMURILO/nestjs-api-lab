@@ -50,20 +50,19 @@ export class MessagesService {
     );
   }
 
-  update(id: number, updateMessageDto: UpdateMessageDto) {
-    const indexMessage = this.messages.findIndex((item) => item.id === +id);
+  async update(id: number, updateMessageDto: UpdateMessageDto) {
+    const partialUpdatedMessageDto = {
+      read: updateMessageDto?.read,
+      text: updateMessageDto?.text,
+    };
 
-    if (indexMessage < 0) throw new NotFoundException('Message not found');
-    if (indexMessage >= 0) {
-      const existingMessage = this.messages[indexMessage];
+    const message = await this.messageRepository.preload({
+      id,
+      ...partialUpdatedMessageDto,
+    });
 
-      this.messages[indexMessage] = {
-        ...existingMessage,
-        ...updateMessageDto,
-      };
-    }
-
-    return this.messages[indexMessage];
+    if (!message) throw new NotFoundException('Message not found');
+    return this.messageRepository.save(message);
   }
 
   async remove(id: number) {
