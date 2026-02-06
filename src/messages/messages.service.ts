@@ -21,7 +21,7 @@ export class MessagesService {
     return this.messages;
   }
 
-  findById(id: string) {
+  findById(id: number) {
     const message = this.messages.find((item) => item.id === +id);
     if (message) return message;
     throw new NotFoundException('Message not found');
@@ -40,7 +40,7 @@ export class MessagesService {
     return newMessage;
   }
 
-  update(id: string, updateMessageDto: UpdateMessageDto) {
+  update(id: number, updateMessageDto: UpdateMessageDto) {
     const indexMessage = this.messages.findIndex((item) => item.id === +id);
 
     if (indexMessage < 0) throw new NotFoundException('Message not found');
@@ -56,8 +56,8 @@ export class MessagesService {
     return this.messages[indexMessage];
   }
 
-  remove(id: string) {
-    const indexMessage = this.messages.findIndex((item) => item.id === +id);
+  remove(id: number) {
+    const indexMessage = this.messages.findIndex((item) => item.id === id);
     if (indexMessage < 0) throw new NotFoundException('Message not found');
     if (indexMessage >= 0) this.messages.splice(indexMessage, 1);
     return 'Message deleted';

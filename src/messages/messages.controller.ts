@@ -6,6 +6,7 @@ import {
   HttpCode,
   HttpStatus,
   Param,
+  ParseIntPipe,
   Patch,
   Post,
 } from '@nestjs/common';
@@ -24,7 +25,7 @@ export class MessagesController {
   }
 
   @Get(':id')
-  findById(@Param('id') id: string) {
+  findById(@Param('id', ParseIntPipe) id: number) {
     return this.messagesService.findById(id);
   }
 
@@ -34,12 +35,15 @@ export class MessagesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatedMessageDto: UpdateMessageDto) {
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updatedMessageDto: UpdateMessageDto,
+  ) {
     return this.messagesService.update(id, updatedMessageDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id', ParseIntPipe) id: number) {
     return this.messagesService.remove(id);
   }
 }
