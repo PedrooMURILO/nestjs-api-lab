@@ -32,4 +32,4 @@ Content-Type: application/json
 }
 ###
 # @name MessagesControllerDelete
-DELETE {{baseUrl}}/messages/2
+DELETE {{baseUrl}}/messages/4
