@@ -41,7 +41,16 @@ POST {{baseUrl}}/persons
 Content-Type: application/json 
 
 {
-    "email": "gladisson@gmail.com",
+    "email": "g@gmail.com",
     "password": "GLAdisson@",
     "name": "Gladisson"
 }
+###
+# @name PersonsControllerFindAll
+GET {{baseUrl}}/persons
+###
+# @name PersonsControllerFindOne
+GET {{baseUrl}}/persons/8
+###
+# @name PersonsControllerDelete
+DELETE {{baseUrl}}/persons/2
