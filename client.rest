@@ -33,3 +33,15 @@ Content-Type: application/json
 ###
 # @name MessagesControllerDelete
 DELETE {{baseUrl}}/messages/4
+
+# Persons
+###
+# @name PersonsControllerPost
+POST {{baseUrl}}/persons
+Content-Type: application/json 
+
+{
+    "email": "gladisson@gmail.com",
+    "password": "GLAdisson@",
+    "name": "Gladisson"
+}
