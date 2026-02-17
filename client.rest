@@ -54,3 +54,11 @@ GET {{baseUrl}}/persons/8
 ###
 # @name PersonsControllerDelete
 DELETE {{baseUrl}}/persons/2
+###
+# @name PersonsControllerPatch
+PATCH {{baseUrl}}/persons/6
+Content-Type: application/json 
+
+{
+    "password": "Mario@123"
+}
