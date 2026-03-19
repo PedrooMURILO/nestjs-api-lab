@@ -17,9 +17,9 @@ POST {{baseUrl}}/messages
 Content-Type: application/json 
 
 {
-    "text": "From Joana to João!",
-    "fromId": 10,
-    "toId": 9
+    "text": "From Leo to Joana!",
+    "fromId": 11,
+    "toId": 12
 }
 ###
 # @name MessagesControllerPatch
@@ -43,7 +43,7 @@ Content-Type: application/json
 {
     "email": "joana@gmail.com",
     "password": "GLAdisson@",
-    "name": "joana"
+    "name": "Joana"
 }
 ###
 # @name PersonsControllerFindAll
@@ -53,7 +53,7 @@ GET {{baseUrl}}/persons
 GET {{baseUrl}}/persons/8
 ###
 # @name PersonsControllerDelete
-DELETE {{baseUrl}}/persons/2
+DELETE {{baseUrl}}/persons/10
 ###
 # @name PersonsControllerPatch
 PATCH {{baseUrl}}/persons/6
