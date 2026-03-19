@@ -48,7 +48,7 @@ export class PersonsService {
         id,
       },
     });
-    if (!person) throw new NotFoundException('Message not found');
+    if (!person) throw new NotFoundException('Person not found');
     return person;
   }
 

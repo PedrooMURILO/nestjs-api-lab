@@ -10,16 +10,16 @@ GET {{baseUrl}}/home/hello
 GET {{baseUrl}}/messages
 ###
 # @name MessagesControllerFindOne
-GET {{baseUrl}}/messages/2
+GET {{baseUrl}}/messages/12
 ###
 # @name MessagesControllerPost
 POST {{baseUrl}}/messages
 Content-Type: application/json 
 
 {
-    "text": "New message",
-    "from": "Pedro",
-    "to": "Gladisson"
+    "text": "From Joana to João!",
+    "fromId": 10,
+    "toId": 9
 }
 ###
 # @name MessagesControllerPatch
@@ -41,9 +41,9 @@ POST {{baseUrl}}/persons
 Content-Type: application/json 
 
 {
-    "email": "g@gmail.com",
+    "email": "joana@gmail.com",
     "password": "GLAdisson@",
-    "name": "Gladisson"
+    "name": "joana"
 }
 ###
 # @name PersonsControllerFindAll
