@@ -4,25 +4,15 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { PersonsService } from 'src/persons/persons.service';
 
 @Injectable()
 export class MessagesService {
   constructor(
     @InjectRepository(MessagesEntity)
     private readonly messageRepository: Repository<MessagesEntity>,
+    private readonly personsService: PersonsService,
   ) {}
-
-  private lastId = 1;
-  private messages: MessagesEntity[] = [
-    {
-      id: 1,
-      text: 'This is a test',
-      from: 'Pedro',
-      to: 'Luiz',
-      read: false,
-      date: new Date(),
-    },
-  ];
 
   async findAll() {
     const messages = await this.messageRepository.find();
