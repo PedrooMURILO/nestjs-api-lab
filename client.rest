@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 ###
 # @name MessagesControllerPatch
-PATCH {{baseUrl}}/messages/1
+PATCH {{baseUrl}}/messages/14
 Content-Type: application/json 
 
 {
