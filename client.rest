@@ -7,7 +7,7 @@ GET {{baseUrl}}/home/hello
 # Messages
 ###
 # @name MessagesControllerFindAll
-GET {{baseUrl}}/messages
+GET {{baseUrl}}/messages?limit=10&offset=0
 ###
 # @name MessagesControllerFindOne
 GET {{baseUrl}}/messages/12
